@@ -1,5 +1,5 @@
 <?php
-$f = @fopen('1-input.txt', 'r');
+$f = @fopen('1.txt', 'r');
 
 $counter = 0;
 while (($line = fgets($f)) !== false) {
