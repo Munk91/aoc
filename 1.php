@@ -1,17 +1,15 @@
 <?php
-
 $f = @fopen('1-input.txt', 'r');
 
 $counter = 0;
-while (($line = fgets($f, 4096)) !== false) {
+while (($line = fgets($f)) !== false) {
     $token = substr($line, 0, 1);
-    $number = substr($line, 1);
+    $number = (int)substr($line, 1);
 
     if ($token === '+') {
-        $counter += (int)$number;
+        $counter += $number;
     } else {
-        $counter -= (int)$number;
+        $counter -= $number;
     }
 }
-
 echo $counter;
